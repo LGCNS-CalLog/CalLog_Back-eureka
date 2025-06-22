@@ -14,6 +14,6 @@ eureka:
     serviceUrl:
       # 유레카 서버의 주소(URL) 지정
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    eviction-interval-timer-in-ms: 5000 # 인스턴스 제거 간격 (5초)
-    renewal-percent-threshold: 0.85 # 갱신 임계값 조정
+#  server:
+#    eviction-interval-timer-in-ms: 5000 # 인스턴스 제거 간격 (5초)
+#    renewal-percent-threshold: 0.85 # 갱신 임계값 조정
