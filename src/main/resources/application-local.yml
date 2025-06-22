@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    # 유레카 인스턴스의 호스트 이름(IP) 명시
+    # 유레카 클라이언트가 자기 자신 또는 유레카 서버를 어떤 주소로 인식할지 결정
+    hostname: 127.0.0.1
+  client:
+    # 유레카 서버에 본인 등록 X
+    register-with-eureka: false
+    # 유레카 서버로부터 다른 서비스 목록을 가져올 필요 X
+    fetch-registry: false
+    serviceUrl:
+      # 유레카 서버의 주소(URL) 지정
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 5000 # 인스턴스 제거 간격 (5초)
+    renewal-percent-threshold: 0.85 # 갱신 임계값 조정
